@@ -166,48 +166,19 @@ public class Projeto {
     }
 
 
-    public void setStatus(StatusProjeto status) {
-        switch (this.status) {
-            case EM_ANDAMENTO_INICIAL:
-                if (status == StatusProjeto. EM_ANDAMENTO || status == StatusProjeto.PAUSADO) {
-                    this.statusAnterior = this.status;
-                    this.status = status;
-                } else  {
-                    System.out.println("Status inválido! A obra precisa seguir o seu curso. O próximo status deve ser EM_ANDAMENTO.");
-                }
-                break;
+    public void setStatus( String status ) {
+        switch (status) {
+            case "1" -> this.status = StatusProjeto.EM_ANDAMENTO_INICIAL;
 
-            case EM_ANDAMENTO:
-                if ( status == StatusProjeto.EM_CONCLUSAO || status == StatusProjeto.PAUSADO) {
-                    this.statusAnterior = this.status;
-                    this.status = status;
-                } else {
-                    System.out.println("Status inválido! A obra precisa seguir o seu curso. O próximo status deve ser EM_CONCLUSAO.");
-                }
-                break;
+            case "2" -> this.status = StatusProjeto.EM_ANDAMENTO;
 
-            case EM_CONCLUSAO:
-                if (status == StatusProjeto.CONCLUIDO || status == StatusProjeto.PAUSADO) {
-                    this.statusAnterior = this.status;
-                    this.status = status;
-                } else {
-                    System.out.println("Status inválido! A obra precisa seguir o seu curso. O próximo status deve ser CONCLUIDO.");
-                }
-                break;
+            case "3" -> this.status = StatusProjeto.EM_CONCLUSAO;
 
-                case CONCLUIDO:
-                    if (temReclamacao){
-                        this.statusAnterior = this.status;
-                        this.status = status;
-                    } else {
-                        System.out.println("Obra concluída! Registre uma reclamação para reabrir.");
-                    }
-                    break;
+            case "4" -> this.status = StatusProjeto.CONCLUIDO;
 
-                case PAUSADO:
-                    this.status = this.statusAnterior;
-                    this.statusAnterior  = null;
-                    break;
+            case "5" -> this.status = StatusProjeto.PAUSADO;
+
+            default -> throw new IllegalStateException("Entrada inválida: " + status);
         }
     }
 

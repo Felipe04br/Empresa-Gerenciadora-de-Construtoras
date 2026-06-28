@@ -23,42 +23,37 @@ public class MenuProjeto {
             opcao = scan.nextInt();
 
             switch (opcao) {
-                case 1:
-                    cadastrarProjeto();
-                    break;
+                case 1 -> {
+                    System.out.println("Digite o tipo do projeto: ");
+                    System.out.println("1 - Casa");
+                    System.out.println("2 - Prédio");
+                    System.out.println("3 - Reforma");
+                    int tipo = scan.nextInt();
+                    scan.nextLine();
+                    if (tipo == 1|| tipo == 2 || tipo == 3) {
+                        cadastrarProjeto(tipo);
+                    } else {
+                        System.out.println("Número inválido, tente novamente!");
+                    }
 
-                case 2:
-                    consultarProjeto();
-                    break;
 
-                case 3:
-                    editarProjeto();
-                    break;
+                }
 
-                case 4:
-                    excluirProjeto();
-                    break;
+                case 2 -> consultarProjeto();
 
-                case 5:
-                    System.out.println("Saindo do sistema...");
-                    break;
+                case 3 -> editarProjeto();
 
-                default:
-                    System.out.println("Opção inválida!");
-                    break;
+                case 4 -> excluirProjeto();
+
+                case 5 -> System.out.println("Saindo do sistema...");
+
+                default -> System.out.println("Opção inválida!");
             }
         }
     }
 
     // Sub-método para organizar o cadastro
-    private void cadastrarProjeto() {
-        System.out.println("Digite o tipo do projeto: ");
-        System.out.println("1 - Casa");
-        System.out.println("2 - Prédio");
-        System.out.println("3 - Reforma");
-        int tipo = scan.nextInt();
-        scan.nextLine();
-
+    private void cadastrarProjeto(int tipo) {
         System.out.println("Digite o nome do projeto: ");
         String nome = scan.nextLine();
 
@@ -94,16 +89,16 @@ public class MenuProjeto {
 
         Planta planta = new Planta(metragem, comodos, pavimentos, arquivo);
 
-        if (tipo == 1) {
+        if (tipo ==1) {
             System.out.println("Digite o número de dormitórios: ");
-            int dormitario = scan.nextInt();
+            int dormitorio = scan.nextInt();
             scan.nextLine();
 
-            ProjetoResidencial projetoResidencial = new ProjetoResidencial(nome, TipoProjeto.CASA, endereco, planta, piscina, valor, parcelas, dormitario);
+            ProjetoResidencial projetoResidencial = new ProjetoResidencial(nome, TipoProjeto.CASA, endereco, planta, piscina, valor, parcelas, dormitorio);
             projetos.add(projetoResidencial);
             System.out.println("Projeto Residencial criado com sucesso!");
 
-        } else if (tipo == 2) {
+        } else if (tipo ==2) {
             System.out.println("Digite o número de andares: ");
             int andares = scan.nextInt();
             scan.nextLine();
@@ -216,8 +211,8 @@ public class MenuProjeto {
                         break;
                     case 3:
                         System.out.println("1-EM_ANDAMENTO 2-EM_CONCLUSAO 3-CONCLUIDO 4-PAUSADO");
-                        int opcaoStatus = scan.nextInt();
-                        scan.nextLine();
+                        String opcao = scan.nextLine();
+                        p.setStatus(opcao);
                         System.out.println("Status atualizado!");
                         break;
                     case 4:

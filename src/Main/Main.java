@@ -17,7 +17,7 @@ public class Main {
         int op = 0;
         while (op != 5) {
             System.out.println("\n=== Empresa ===");
-            System.out.println("1-Funcionario 2-Cliente 3-Projeto 4-Construtora 5-Sair");
+            System.out.println("1-Funcionário 2-Cliente 3-Projeto 4-Construtora 5-Sair");
             op = scanner.nextInt();
             switch (op) {
                 case 1 -> funcionario.exibirMenu();
