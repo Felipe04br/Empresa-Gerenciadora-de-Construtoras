@@ -1,6 +1,8 @@
 package Projeto;
+import java.io.Serializable;
 
-public class ProjetoResidencial extends Projeto {
+public class ProjetoResidencial extends Projeto implements Serializable {
+    private static final long serialVersionUID = 1L;
     private int numeroDormitorio;
 
     public ProjetoResidencial(String nome, TipoProjeto tipo, String endereco, Planta planta, boolean temPiscina, double orcamentoTotal, int numeroParcelas, int numeroDormitorio){

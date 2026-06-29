@@ -1,6 +1,8 @@
 package Funcionario;
+import java.io.Serializable;
 
-public class Funcionario {
+public class Funcionario implements Serializable {
+    private static final long serialVersionUID = 1L;
     protected String nome;
     protected String cpf;
     protected String cargo;
