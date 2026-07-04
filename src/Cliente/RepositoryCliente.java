@@ -25,6 +25,7 @@ public class RepositoryCliente {
 
     public void salvar(Cliente novoCliente) {
         lista.add(novoCliente);
+        salvarDados();
     }
 
     public List<Cliente> buscarTodos() {
@@ -45,6 +46,7 @@ public class RepositoryCliente {
 
         if (cliente != null) {
             lista.remove(cliente);
+            salvarDados();
             System.out.println("Cliente removido!");
         } else {
             System.out.println("Cliente não encontrado.");

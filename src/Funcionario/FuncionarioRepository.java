@@ -23,6 +23,7 @@ public class FuncionarioRepository {
 
     public void salvar(Funcionario novoFuncionario) {
         lista.add(novoFuncionario);
+        salvarDados();
     }
 
     public List<Funcionario> buscarTodos() {
@@ -40,6 +41,7 @@ public class FuncionarioRepository {
         Funcionario funcionario = buscarPorCpf(cpf);
         if (funcionario != null) {
             lista.remove(funcionario);
+            salvarDados();
             System.out.println("Removido!");
         } else {
             System.out.println("Funcionário não encontrado para remoção.");

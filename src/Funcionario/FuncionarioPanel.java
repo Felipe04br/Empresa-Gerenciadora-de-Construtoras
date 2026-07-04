@@ -5,7 +5,7 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 
 public class FuncionarioPanel extends JPanel {
-    private JTextField txtNome, txtCpf, txtCargo, txtEndereco, txtSalario, txtEspecífico1, txtEspecífico2;
+    private JTextField txtNome, txtCpf, txtCargo, txtEndereco, txtSalario, txtEspecifico1, txtEspecifico2;
     private JLabel lblEsp1, lblEsp2;
     private JComboBox<String> cbTipo;
     private JTable tabela;
@@ -28,10 +28,10 @@ public class FuncionarioPanel extends JPanel {
         form.add(new JLabel("Endereço:")); txtEndereco = new JTextField(); form.add(txtEndereco);
         form.add(new JLabel("Salário:")); txtSalario = new JTextField(); form.add(txtSalario);
 
-        lblEsp1 = new JLabel("Setor:"); txtEspecífico1 = new JTextField();
-        form.add(lblEsp1); form.add(txtEspecífico1);
-        lblEsp2 = new JLabel("Formação:"); txtEspecífico2 = new JTextField();
-        form.add(lblEsp2); form.add(txtEspecífico2);
+        lblEsp1 = new JLabel("Setor:"); txtEspecifico1 = new JTextField();
+        form.add(lblEsp1); form.add(txtEspecifico1);
+        lblEsp2 = new JLabel("Formação:"); txtEspecifico2 = new JTextField();
+        form.add(lblEsp2); form.add(txtEspecifico2);
 
         cbTipo.addActionListener(e -> {
             if (cbTipo.getSelectedIndex() == 0) {
@@ -61,13 +61,13 @@ public class FuncionarioPanel extends JPanel {
 
                 if (cbTipo.getSelectedIndex() == 0) {
                     Gestao g = new Gestao(nome, cpf, cargo, end, sal);
-                    g.setSetor(txtEspecífico1.getText());
-                    g.setFormacao(txtEspecífico2.getText());
+                    g.setSetor(txtEspecifico1.getText());
+                    g.setFormacao(txtEspecifico2.getText());
                     repo.salvar(g);
                 } else {
                     Operacional o = new Operacional(nome, cpf, cargo, end, sal);
-                    o.setLocal(txtEspecífico1.getText());
-                    o.setSupervisor(txtEspecífico2.getText());
+                    o.setLocal(txtEspecifico1.getText());
+                    o.setSupervisor(txtEspecifico2.getText());
                     repo.salvar(o);
                 }
                 atualizarTabela();
@@ -100,6 +100,6 @@ public class FuncionarioPanel extends JPanel {
 
     private void limparCampos() {
         txtNome.setText(""); txtCpf.setText(""); txtCargo.setText(""); txtEndereco.setText("");
-        txtSalario.setText(""); txtEspecífico1.setText(""); txtEspecífico2.setText("");
+        txtSalario.setText(""); txtEspecifico1.setText(""); txtEspecifico2.setText("");
     }
 }

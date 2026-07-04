@@ -23,6 +23,7 @@ import java.io.*;
 
         public void salvar(Construtora novaConstrutora) {
             lista.add(novaConstrutora);
+            salvarDados();
         }
 
         public List<Construtora> buscarTodos() {
@@ -43,6 +44,7 @@ import java.io.*;
 
             if (construtora != null) {
                 lista.remove(construtora);
+                salvarDados();
                 System.out.println("Construtora.Construtora removida!");
             } else {
                 System.out.println("Construtora.Construtora não encontrada.");
