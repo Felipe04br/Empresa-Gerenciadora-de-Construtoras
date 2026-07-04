@@ -1,3 +1,4 @@
+*.dat
 ### IntelliJ IDEA ###
 out/
 !**/src/main/**/out/
