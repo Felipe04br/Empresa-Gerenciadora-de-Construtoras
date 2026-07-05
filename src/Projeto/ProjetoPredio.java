@@ -1,6 +1,8 @@
 package Projeto;
+import java.io.Serializable;
 
-public class ProjetoPredio extends Projeto {
+public class ProjetoPredio extends Projeto implements Serializable {
+    private static final long serialVersionUID = 1L;
     private int numeroUnidades;
     private int numeroAndares;
     private boolean temElevador;

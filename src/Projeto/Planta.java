@@ -1,6 +1,9 @@
 package Projeto;
 
-public class Planta {
+import java.io.Serializable;
+
+public class Planta implements Serializable {
+    private static final long serialVersionUID = 1L;
     private double metragemTotal;
     private int numeroComodos;
     private int numeroPavimentos;

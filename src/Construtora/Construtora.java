@@ -1,7 +1,8 @@
 package Construtora;
+import java.io.Serializable;
 
-public class Construtora {
-
+public class Construtora implements Serializable {
+        private static final long serialVersionUID = 1L;
         private String razaoSocial;
         private String cnpj;
         private String telefone;

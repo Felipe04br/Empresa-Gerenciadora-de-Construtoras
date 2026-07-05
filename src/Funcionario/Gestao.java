@@ -1,6 +1,8 @@
 package Funcionario;
+import java.io.Serializable;
 
-public class Gestao extends Funcionario{
+public class Gestao extends Funcionario  implements Serializable {
+    private static final long serialVersionUID = 1L;
     private String setor;
     private String formacao;
 

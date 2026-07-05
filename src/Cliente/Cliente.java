@@ -1,7 +1,9 @@
 package Cliente;
-import java.util.Scanner;
-public class Cliente {
-    //utilizo String para variaveis que não será necessario fazer conta.
+import java.io.Serializable;
+
+public class Cliente  implements Serializable{
+    private static final long serialVersionUID = 1L;
+    //utilizo String para variáveis que não será necessário fazer conta.
     private String nome;
     private String cpf;
     private String cnpj;

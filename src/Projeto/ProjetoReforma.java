@@ -1,6 +1,8 @@
 package Projeto;
+import java.io.Serializable;
 
-public class ProjetoReforma extends Projeto{
+public class ProjetoReforma extends Projeto implements Serializable {
+    private static final long serialVersionUID = 1L;
     private String descricaoAlteracoes;
     private boolean precisaReforco;
 

@@ -1,10 +1,11 @@
 package Projeto;
-
+import java.io.Serializable;
 import java.time.LocalDate;
 
 //Atributos:
 
-public class Projeto {
+public class Projeto implements Serializable {
+    private static final long serialVersionUID = 1L;
     private static int contadorId = 0;
     private int id;
     private String nome;
